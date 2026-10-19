@@ -97,7 +97,9 @@ def analyse(text, cut=TRUNCATE, keywords=None):
     text = normalize(text.rstrip())
     stripped = text.strip()
     chars = len(stripped)
-    lines = stripped.split("\n")
+    # خط اول را از متن خام می‌گیریم (نه از نسخه‌ی strip‌شده) تا کپشنی که با
+    # خط خالی شروع می‌شود هم درست گرفته شود.
+    lines = text.split("\n")
     first_line = lines[0].strip() if lines else ""
     tags = HASHTAG_RE.findall(stripped)
     mentions = MENTION_RE.findall(stripped)

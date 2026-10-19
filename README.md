@@ -28,4 +28,24 @@ python3 caption_fa.py caption.txt
 python3 swipe_fa.py captured.tsv
 ```
 
-نرخ گفتار پیش‌فرض ۱۳۰ کلمه در دقیقه است؛ با `--wpm` و `--hook` قابل تنظیم.
+نرخ گفتار پیش‌فرض ۱۳۰ کلمه در دقیقه است؛ با `--wpm` (هر دو ابزار بالای خط) قابل
+تنظیم. پنجره‌ی هوک ۳ ثانیه است و `hookscore_fa.py` و `beats_fa.py` از یک آستانه
+استفاده می‌کنند.
+
+## نصب به‌عنوان اسکیل opencode
+
+```bash
+mkdir -p ~/.config/opencode/skill
+ln -s "$PWD" ~/.config/opencode/skill/ig-persian
+```
+
+بعد از ذخیره، opencode را ببند و دوباره باز کن تا اسکیل بارگذاری شود.
+
+## تغییرات
+
+فهرست کامل تغییرات در [`CHANGELOG.md`](./CHANGELOG.md). نسخه‌ی فعلی: `1.1.0`.
+
+## مجوز
+
+MIT — متن کامل در [`LICENSE`](./LICENSE). حق اصل متعلق به Jake Schincariol است
+و اقتباس فارسی به Mrribvar.

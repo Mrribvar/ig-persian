@@ -66,7 +66,12 @@ def read_rows(path):
     if "views" in head and "hook" in head:
         cols, body = head, lines[1:]
     else:
-        cols, body = ["account", "followers", "views", "hook"], lines
+        # بدون هدر: ستون‌ها را از تعداد سلول‌های سطر اول حدس بزن تا فایل
+        # پنج‌ستونی (account followers median views hook) با داکیومنت بخواند.
+        ncols = len(lines[0].split("\t"))
+        cols = (["account", "followers", "median", "views", "hook"] if ncols >= 5
+                else ["account", "followers", "views", "hook"])
+        body = lines
     rows = []
     for line in body:
         cells = line.split("\t")
